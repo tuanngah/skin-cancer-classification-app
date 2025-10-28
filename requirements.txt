@@ -1,0 +1,24 @@
+# --- Core Deep Learning & Models ---
+torch
+torchvision
+torchaudio
+timm                 # Để tải DeiT/ViT (PyTorch Image Models)
+
+# --- Data Science & Utilities ---
+pandas               # Đọc và xử lý metadata (CSV)
+numpy                # Xử lý mảng (tensor/ảnh)
+scikit-learn         # Tính metrics (F1, Macro-F1, Confusion Matrix, AUC)
+matplotlib           # Vẽ biểu đồ, hiển thị ảnh
+seaborn              # Vẽ biểu đồ đẹp hơn (Confusion Matrix heatmap)
+tqdm                 # Thanh tiến trình (progress bar)
+jupyterlab           # Môi trường Notebook (để chạy notebooks/)
+opencv-python-headless # Xử lý ảnh (resize, heatmaps)
+
+# --- Interpretability (Giải thích Mô hình) ---
+grad-cam             # Thư viện phổ biến cho Grad-CAM, Grad-CAM++
+
+# --- Inference Optimization (Tối ưu Suy luận) ---
+onnx                 # Xuất mô hình sang định dạng ONNX
+onnxruntime-gpu      # Chạy ONNX trên GPU (cho PC/Server)
+
+gradio               

@@ -1,0 +1,36 @@
+PROJECT: SkinCancer_ResNet50_Pretrained
+RUN_NAME: resnet50-base-run-focal-gamma2
+SEED: 42
+NUM_CLASSES: 7
+DEVICE: cuda
+
+DATA:
+  IMAGE_ROOT: "data/raw/images"
+  TRAIN_CSV: "data/processed/train_split.csv"
+  VAL_CSV: "data/processed/val_split.csv"
+  TEST_CSV: "data/processed/test_split.csv"
+  USE_WEIGHTED_SAMPLER: True
+  IMG_SIZE: 224
+
+AUGMENTATION:
+  RAND_AUGMENT_MAGNITUDE: 9
+  RAND_AUGMENT_NUM_OPS: 2
+  MIXUP_PROB: 0.0
+  CUTMIX_PROB: 0.0
+  LABEL_SMOOTHING: 0.05
+
+MODEL:
+  NAME: resnet50
+  PRETRAINED: True
+
+TRAIN:
+  EPOCHS: 50
+  BATCH_SIZE: 32
+  OPTIMIZER_NAME: AdamW
+  LEARNING_RATE: 3.0e-4
+  WEIGHT_DECAY: 0.05
+  USE_SCHEDULER: True
+  WARMUP_EPOCHS: 5
+  LOSS_FUNCTION: FocalLoss
+  FOCAL_LOSS_GAMMA: 2.0
+  EARLY_STOPPING_PATIENCE: 200
